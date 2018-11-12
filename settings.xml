@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <servers>
+    <server>
+      <username>au-css</username>
+      <password>AP7eYrzXXTQhGcgckmZMiNpFXDy</password>
+      <id>AU-Release</id>
+    </server>
+    <server>
+      <username>au-css</username>
+      <password>AP7eYrzXXTQhGcgckmZMiNpFXDy</password>
+      <id>AU-Snapshot</id>
+    </server>
+  </servers>
+  <mirrors>
+    <mirror>
+      <id>nexus</id>
+      <mirrorOf>*,!AU-Release,!AU-Snapshot</mirrorOf>
+      <url>http://usbalp-artfct01.cts.cubic.cub:8085/artifactory/libs-release/</url>
+    </mirror>
+  </mirrors>
+  
+  <profiles>
+    <profile>
+    <id>artifactory</id>
+      <repositories>
+        <repository>
+          <id>AU-Release</id>
+          <name>AU-Release</name>
+          <url>http://usbalp-artfct01.cts.cubic.cub:8085/artifactory/AU-Release</url>
+		  <releases>
+          	<enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>          
+        </repository>
+        <repository>
+          <snapshots />
+          <id>AU-Snapshot</id>
+          <name>AU-Snapshot</name>
+          <url>http://usbalp-artfct01.cts.cubic.cub:8085/artifactory/AU-Snapshot</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>AU-Release</id>
+          <name>AU-Release</name>
+          <url>http://usbalp-artfct01.cts.cubic.cub:8085/artifactory/AU-Release</url>
+        </pluginRepository>
+        <pluginRepository>
+          <snapshots />
+          <id>AU-Snapshot</id>
+          <name>AU-Snapshot</name>
+          <url>http://usbalp-artfct01.cts.cubic.cub:8085/artifactory/AU-Snapshot</url>
+        </pluginRepository>
+	  </pluginRepositories>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>artifactory</activeProfile>
+  </activeProfiles>
+</settings>

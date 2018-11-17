@@ -1,0 +1,6 @@
+di build -t myboot .
+dc run -d -p 8090:8090 myboot
+
+# this doesnt work: dc run -d myboot -p 8090:8090
+
+
